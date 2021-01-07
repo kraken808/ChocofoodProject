@@ -13,6 +13,9 @@
 		FBC753FD25A7114A005982B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC753FB25A7114A005982B5 /* Main.storyboard */; };
 		FBC753FF25A7114B005982B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC753FE25A7114B005982B5 /* Assets.xcassets */; };
 		FBC7540225A7114B005982B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC7540025A7114B005982B5 /* LaunchScreen.storyboard */; };
+		FBC7540B25A71165005982B5 /* Mcafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540A25A71165005982B5 /* Mcafe.swift */; };
+		FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540D25A711D6005982B5 /* NetworkManager.swift */; };
+		FBC7541025A71819005982B5 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540F25A71819005982B5 /* MenuViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		FBC753FE25A7114B005982B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBC7540125A7114B005982B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBC7540325A7114B005982B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC7540A25A71165005982B5 /* Mcafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mcafe.swift; sourceTree = "<group>"; };
+		FBC7540D25A711D6005982B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FBC7540F25A71819005982B5 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		FBC753F425A7114A005982B5 /* ChocofoodProject */ = {
 			isa = PBXGroup;
 			children = (
+				FBC7540925A71155005982B5 /* Model */,
+				FBC7541125A726C4005982B5 /* ViewCells */,
+				FBC7540C25A711A2005982B5 /* ViewControllers */,
 				FBC753F525A7114A005982B5 /* AppDelegate.swift */,
 				FBC753F725A7114A005982B5 /* SceneDelegate.swift */,
-				FBC753F925A7114A005982B5 /* ViewController.swift */,
+				FBC7540D25A711D6005982B5 /* NetworkManager.swift */,
 				FBC753FB25A7114A005982B5 /* Main.storyboard */,
 				FBC753FE25A7114B005982B5 /* Assets.xcassets */,
 				FBC7540025A7114B005982B5 /* LaunchScreen.storyboard */,
 				FBC7540325A7114B005982B5 /* Info.plist */,
 			);
 			path = ChocofoodProject;
+			sourceTree = "<group>";
+		};
+		FBC7540925A71155005982B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBC7540A25A71165005982B5 /* Mcafe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBC7540C25A711A2005982B5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBC753F925A7114A005982B5 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FBC7541125A726C4005982B5 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FBC7540F25A71819005982B5 /* MenuViewCell.swift */,
+			);
+			path = ViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +173,10 @@
 			files = (
 				FBC753FA25A7114A005982B5 /* ViewController.swift in Sources */,
 				FBC753F625A7114A005982B5 /* AppDelegate.swift in Sources */,
+				FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */,
+				FBC7540B25A71165005982B5 /* Mcafe.swift in Sources */,
 				FBC753F825A7114A005982B5 /* SceneDelegate.swift in Sources */,
+				FBC7541025A71819005982B5 /* MenuViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
