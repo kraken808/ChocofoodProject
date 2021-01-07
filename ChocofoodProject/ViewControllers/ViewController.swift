@@ -18,6 +18,10 @@ class ViewController: UIViewController {
 //        view.backgroundColor = .white
         setupTablewView()
        
+        
+        
+        
+        
         NetworkManager.getCafes { (result) in
             self.cafes = result
             DispatchQueue.main.async{
