@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var tableView: UITableView!
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
+    private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,8 @@ class ViewController: UIViewController {
         
         
         
-        
-        NetworkManager.getCafes { (result) in
+      
+        NetworkManager.fetch(url: cafeUrl) { (result: [Cafe]) in
             self.cafes = result
             DispatchQueue.main.async{
                 self.tableView.reloadData()
