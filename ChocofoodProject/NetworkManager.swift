@@ -80,11 +80,6 @@ class NetworkManager {
         var request = URLRequest(baseUrl: baseUrl, path: path, method: method, params: params)
               
 
-                
-
-               
-
-
             let session: URLSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
 
                 let task = session.dataTask(with: request, completionHandler: { data, response, error in
