@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
     private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
-    
+    static let shared = NetworkManager(baseUrl: "https://api.jsonbin.io")
     override func viewDidLoad() {
         super.viewDidLoad()
 //        view.backgroundColor = .white
@@ -21,14 +21,37 @@ class ViewController: UIViewController {
        
         
         
-        
-      
-        NetworkManager.fetch(url: cafeUrl) { (result: [Cafe]) in
-            self.cafes = result
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
+        ViewController.shared.getData(path: "/b/5ff1946009f7c73f1b6d134f", method: .get, params: ["id": 12]) { (result: Result<[Cafe],Error>) in
+               switch result{
+                     case .success(let result):
+
+                        self.cafes = result
+                        DispatchQueue.main.async{
+                            self.tableView.reloadData()
+                        }
+                     case .failure(_):
+                         print("\n \n error hetting data! \n \n")
+
+                     }
         }
+        
+        ViewController.shared.postData(path: "/c/5ff1946009f7c73f1b6d134f", method: .post, params: ["userId": 15,"title":"meduza","body":"gobadod"]) { (result: Result<[Cafe],Error>) in
+                      switch result{
+                            case .success(let result):
+                               
+                             print("sucseeeesd")
+                            case .failure(_):
+                                print("\n \n error hetting data! \n \n")
+                               
+                            }
+               }
+      
+//        NetworkManager.getData() { (result: [Cafe]) in
+//            self.cafes = result
+//            DispatchQueue.main.async{
+//                self.tableView.reloadData()
+//            }
+//        }
        
        setupConstraints()
 }

@@ -13,9 +13,16 @@
 		FBC753FD25A7114A005982B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC753FB25A7114A005982B5 /* Main.storyboard */; };
 		FBC753FF25A7114B005982B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC753FE25A7114B005982B5 /* Assets.xcassets */; };
 		FBC7540225A7114B005982B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC7540025A7114B005982B5 /* LaunchScreen.storyboard */; };
-		FBC7540B25A71165005982B5 /* Mcafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540A25A71165005982B5 /* Mcafe.swift */; };
+		FBC7540B25A71165005982B5 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540A25A71165005982B5 /* Cafe.swift */; };
 		FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540D25A711D6005982B5 /* NetworkManager.swift */; };
 		FBC7541025A71819005982B5 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540F25A71819005982B5 /* MenuViewCell.swift */; };
+		FBC7541525A89FCD005982B5 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7541425A89FCD005982B5 /* EndPointType.swift */; };
+		FBC7541D25A8A303005982B5 /* ApiErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7541C25A8A303005982B5 /* ApiErrorMessage.swift */; };
+		FBC7542125A9D9C1005982B5 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542025A9D9C1005982B5 /* MMessage.swift */; };
+		FBC7542525AB7D6A005982B5 /* URLexstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542425AB7D6A005982B5 /* URLexstension.swift */; };
+		FBC7542725AB7EDF005982B5 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542625AB7EDF005982B5 /* ServiceError.swift */; };
+		FBC7542925AB8125005982B5 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542825AB8125005982B5 /* RequestMethod.swift */; };
+		FBC7542B25AB85DB005982B5 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542A25AB85DB005982B5 /* URLRequestExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +34,16 @@
 		FBC753FE25A7114B005982B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBC7540125A7114B005982B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBC7540325A7114B005982B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBC7540A25A71165005982B5 /* Mcafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mcafe.swift; sourceTree = "<group>"; };
+		FBC7540A25A71165005982B5 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		FBC7540D25A711D6005982B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FBC7540F25A71819005982B5 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
+		FBC7541425A89FCD005982B5 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		FBC7541C25A8A303005982B5 /* ApiErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorMessage.swift; sourceTree = "<group>"; };
+		FBC7542025A9D9C1005982B5 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
+		FBC7542425AB7D6A005982B5 /* URLexstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLexstension.swift; sourceTree = "<group>"; };
+		FBC7542625AB7EDF005982B5 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		FBC7542825AB8125005982B5 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		FBC7542A25AB85DB005982B5 /* URLRequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,12 @@
 				FBC753FE25A7114B005982B5 /* Assets.xcassets */,
 				FBC7540025A7114B005982B5 /* LaunchScreen.storyboard */,
 				FBC7540325A7114B005982B5 /* Info.plist */,
+				FBC7541425A89FCD005982B5 /* EndPointType.swift */,
+				FBC7541C25A8A303005982B5 /* ApiErrorMessage.swift */,
+				FBC7542A25AB85DB005982B5 /* URLRequestExtension.swift */,
+				FBC7542825AB8125005982B5 /* RequestMethod.swift */,
+				FBC7542625AB7EDF005982B5 /* ServiceError.swift */,
+				FBC7542425AB7D6A005982B5 /* URLexstension.swift */,
 			);
 			path = ChocofoodProject;
 			sourceTree = "<group>";
@@ -79,7 +99,8 @@
 		FBC7540925A71155005982B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FBC7540A25A71165005982B5 /* Mcafe.swift */,
+				FBC7540A25A71165005982B5 /* Cafe.swift */,
+				FBC7542025A9D9C1005982B5 /* MMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,9 +195,16 @@
 				FBC753FA25A7114A005982B5 /* ViewController.swift in Sources */,
 				FBC753F625A7114A005982B5 /* AppDelegate.swift in Sources */,
 				FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */,
-				FBC7540B25A71165005982B5 /* Mcafe.swift in Sources */,
+				FBC7542125A9D9C1005982B5 /* MMessage.swift in Sources */,
+				FBC7542525AB7D6A005982B5 /* URLexstension.swift in Sources */,
+				FBC7542925AB8125005982B5 /* RequestMethod.swift in Sources */,
+				FBC7540B25A71165005982B5 /* Cafe.swift in Sources */,
+				FBC7542B25AB85DB005982B5 /* URLRequestExtension.swift in Sources */,
+				FBC7542725AB7EDF005982B5 /* ServiceError.swift in Sources */,
 				FBC753F825A7114A005982B5 /* SceneDelegate.swift in Sources */,
 				FBC7541025A71819005982B5 /* MenuViewCell.swift in Sources */,
+				FBC7541D25A8A303005982B5 /* ApiErrorMessage.swift in Sources */,
+				FBC7541525A89FCD005982B5 /* EndPointType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
