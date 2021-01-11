@@ -13,8 +13,7 @@ import Foundation
 //    var error: String
 //}
 
-struct ApiErrorMessage: Codable{
+struct ApiErrorMessage: Decodable{
     var message: String
-  
    
 }
