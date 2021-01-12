@@ -16,10 +16,10 @@
 		FBC7540B25A71165005982B5 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540A25A71165005982B5 /* Cafe.swift */; };
 		FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540D25A711D6005982B5 /* NetworkManager.swift */; };
 		FBC7541025A71819005982B5 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7540F25A71819005982B5 /* MenuViewCell.swift */; };
-		FBC7541D25A8A303005982B5 /* ApiErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7541C25A8A303005982B5 /* ApiErrorMessage.swift */; };
+		FBC7541D25A8A303005982B5 /* StatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7541C25A8A303005982B5 /* StatusResponse.swift */; };
 		FBC7542125A9D9C1005982B5 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542025A9D9C1005982B5 /* MMessage.swift */; };
 		FBC7542525AB7D6A005982B5 /* URLexstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542425AB7D6A005982B5 /* URLexstension.swift */; };
-		FBC7542725AB7EDF005982B5 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542625AB7EDF005982B5 /* ServiceError.swift */; };
+		FBC7542725AB7EDF005982B5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542625AB7EDF005982B5 /* APIError.swift */; };
 		FBC7542925AB8125005982B5 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542825AB8125005982B5 /* RequestType.swift */; };
 		FBC7542F25AC984F005982B5 /* MPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542E25AC984F005982B5 /* MPost.swift */; };
 /* End PBXBuildFile section */
@@ -36,10 +36,10 @@
 		FBC7540A25A71165005982B5 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		FBC7540D25A711D6005982B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FBC7540F25A71819005982B5 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
-		FBC7541C25A8A303005982B5 /* ApiErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorMessage.swift; sourceTree = "<group>"; };
+		FBC7541C25A8A303005982B5 /* StatusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponse.swift; sourceTree = "<group>"; };
 		FBC7542025A9D9C1005982B5 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		FBC7542425AB7D6A005982B5 /* URLexstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLexstension.swift; sourceTree = "<group>"; };
-		FBC7542625AB7EDF005982B5 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		FBC7542625AB7EDF005982B5 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		FBC7542825AB8125005982B5 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		FBC7542E25AC984F005982B5 /* MPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,8 +128,8 @@
 			children = (
 				FBC7540D25A711D6005982B5 /* NetworkManager.swift */,
 				FBC7542825AB8125005982B5 /* RequestType.swift */,
-				FBC7541C25A8A303005982B5 /* ApiErrorMessage.swift */,
-				FBC7542625AB7EDF005982B5 /* ServiceError.swift */,
+				FBC7541C25A8A303005982B5 /* StatusResponse.swift */,
+				FBC7542625AB7EDF005982B5 /* APIError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -212,11 +212,11 @@
 				FBC7542525AB7D6A005982B5 /* URLexstension.swift in Sources */,
 				FBC7542925AB8125005982B5 /* RequestType.swift in Sources */,
 				FBC7540B25A71165005982B5 /* Cafe.swift in Sources */,
-				FBC7542725AB7EDF005982B5 /* ServiceError.swift in Sources */,
+				FBC7542725AB7EDF005982B5 /* APIError.swift in Sources */,
 				FBC753F825A7114A005982B5 /* SceneDelegate.swift in Sources */,
 				FBC7541025A71819005982B5 /* MenuViewCell.swift in Sources */,
 				FBC7542F25AC984F005982B5 /* MPost.swift in Sources */,
-				FBC7541D25A8A303005982B5 /* ApiErrorMessage.swift in Sources */,
+				FBC7541D25A8A303005982B5 /* StatusResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

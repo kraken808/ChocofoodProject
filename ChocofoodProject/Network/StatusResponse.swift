@@ -13,7 +13,7 @@ import Foundation
 //    var error: String
 //}
 
-struct ApiErrorMessage: Decodable{
+struct StatusResponse: Decodable{
     var message: String
    
 }

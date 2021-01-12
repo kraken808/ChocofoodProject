@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ServiceError: Error,LocalizedError {
+enum APIError: Error,LocalizedError {
     case connectionEror
     case message(String)
     case other
