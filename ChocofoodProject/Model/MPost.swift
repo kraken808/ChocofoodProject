@@ -9,11 +9,11 @@
 import Foundation
 
 struct Data: Codable{
-    var id: String
+    var sample: String
 }
 
 struct MPost: Codable{
     var success: Bool
     var data: Data
-    var message: String
+    var id: String
 }

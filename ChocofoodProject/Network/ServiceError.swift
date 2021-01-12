@@ -9,17 +9,20 @@
 import Foundation
 
 enum ServiceError: Error,LocalizedError {
-    case noInternetConnection
-    case custom(String)
+    case connectionEror
+    case message(String)
     case other
+    case errorFetchingdata
     
     var errorDescription: String? {
         switch self {
-        case .noInternetConnection:
+        case .connectionEror:
             return "No Internet connection"
         case .other:
             return "Something went wrong"
-        case .custom(let message):
+        case .errorFetchingdata:
+                return "Did not receive data"
+        case .message(let message):
             return message
         }
     }

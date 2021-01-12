@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension URL {
-    init(baseUrl: String, path: String, params: JSON, method: RequestMethod) {
+    init(baseUrl: String, path: String, params: JSON, method: RequestType) {
         var components = URLComponents(string: baseUrl)!
         components.path += path
         
@@ -24,19 +24,22 @@ extension URL {
         }
         
         self = components.url!
+        print("--------\n")
+        print(components.url!)
+        print("--------\n")
     }
 }
 
 extension URLRequest {
-    init(baseUrl: String, path: String, method: RequestMethod, params: JSON) {
+    init(baseUrl: String, path: String, method: RequestType, params: JSON) {
         let url = URL(baseUrl: baseUrl, path: path, params: params, method: method)
         self.init(url: url)
         httpMethod = method.rawValue
-        setValue("application/json", forHTTPHeaderField: "Accept")
-        setValue("application/json", forHTTPHeaderField: "Content-Type")
+        setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
+        setValue("application/json", forHTTPHeaderField: "Accept") // the response expected to be in JSON format
         switch method {
         case .post, .put:
-            httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+           httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
         default:
             break
         }

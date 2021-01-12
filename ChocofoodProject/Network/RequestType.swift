@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RequestMethod: String {
+enum RequestType: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
