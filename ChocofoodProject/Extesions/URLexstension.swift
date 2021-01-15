@@ -15,9 +15,7 @@ extension URL {
         components.path += path
         components.queryItems = queryItems
         self = components.url!
-        print("--------\n")
-        print(components.url!)
-        print("--------\n")
+       
     }
 }
 

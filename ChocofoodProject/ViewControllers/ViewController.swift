@@ -9,24 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var tableView: UITableView!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
     private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
     static let shared = NetworkManager(baseUrl: "https://api.jsonbin.io")
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .white
-        setupTablewView()
-       
+        view.backgroundColor = .white
+      
+     collectionView.register(UINib(nibName: "MenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MenuCell")
         
       
         ViewController.shared.request(path:"/b/5ff1946009f7c73f1b6d134f", method: .get, params: ["id": 12, "test": "salam"]) { (result: Result<[Cafe],Error>) in
                switch result{
                      case .success(let result):
+                        print(result)
                      self.cafes = result
                                  DispatchQueue.main.async{
-                                     self.tableView.reloadData()
+                                     self.collectionView.reloadData()
                                  }
                        print(result)
                      case .failure(_):
@@ -34,52 +36,67 @@ class ViewController: UIViewController {
 
                      }
         }
-        
-      
-//        NetworkManager.getData() { (result: [Cafe]) in
-//            self.cafes = result
-//            DispatchQueue.main.async{
-//                self.tableView.reloadData()
-//            }
-//        }
        
-       setupConstraints()
+      
 }
-    func setupTablewView(){
-        tableView = UITableView()
-        tableView.allowsSelection = false
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MenuViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.tableFooterView = UIView() // so there's no empty lines at the bottom
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
-    }
-    func setupConstraints(){
-        NSLayoutConstraint.activate([
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        tableView.topAnchor.constraint(equalTo: view.topAnchor),
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
+   
 }
 
-extension ViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cafes.count
+extension ViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cafes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MenuViewCell
-               cell.configure(for: cafes[indexPath.row])
-               return cell
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! MenuCell
+        cell.bindData(data: cafes[indexPath.row])
+        return cell
     }
     
     
 }
-extension ViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-}
+
+//extension ViewController: UICollectionViewDelegate{
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        print(#function)
+//    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        return 203
+//    }
+//   
+//}
+
+//extension ViewController: UICollectionViewDelegateFlowLayout{
+//
+//// func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+////
+////      let width = (collectionView.frame.size.width-30)
+////    print("heaight: \(width)")
+////    print("width: \(width)")
+////       return CGSize(width: width, height: width)
+////   }
+//
+//   //---------------------------------------------------------------------------------------------------------------------------------------------
+//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//       return 1
+//   }
+//
+//   //---------------------------------------------------------------------------------------------------------------------------------------------
+//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//
+//       return 1
+//   }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        return UIEdgeInsets(top: 40, left: 15, bottom: 26, right: 16)
+//    }
+//}
