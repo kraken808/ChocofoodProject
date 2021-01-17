@@ -19,17 +19,40 @@ class MenuCell: UICollectionViewCell {
     @IBOutlet weak var deliveryCash: UILabel!
     @IBOutlet weak var cashTenge: UILabel!
     @IBOutlet weak var deliveryTime: UILabel!
+
+
     
-   
-   
     func bindData(data: Cafe) {
-        self.contentView.backgroundColor = .blue
+        setupFont()
         restaurantName.text = data.restaurant.title
+       
         imageView.sd_setImage(with: URL(string: data.restaurant.image), completed: nil)
-        rating.text = "\(data.restaurant.rating)"
-        deliveryCash.text = "от \(data.delivery_tariff.conditions[0].delivery_cost)"
-        cashTenge.text = "\(data.delivery_tariff.conditions[0].order_min_cost) тг"
-        deliveryTime.text = "\(data.delivery_time.low_limit_minutes)"
+        if(data.delivery_tariff.conditions[0].order_min_cost/1000 >= 1){
+            var thousand = data.delivery_tariff.conditions[0].order_min_cost / 1000
+            var hundred = data.delivery_tariff.conditions[0].order_min_cost % 1000
+            cashTenge.text = "\(thousand) \(hundred) тг"
+        }else{
+            cashTenge.text = "\(data.delivery_tariff.conditions[0].order_min_cost) тг"
+        }
+        var rate = Double(data.restaurant.rating)
+        rating.text = "\(rate*5/100)"
+        deliveryCash.text = "от \(data.delivery_tariff.conditions[0].delivery_cost) тг"
+        
+        deliveryTime.text = "\(data.delivery_time.low_limit_minutes) мин."
     }
     
+   func setupFont(){
+    
+   
+    
+   
+    }
+    
+
+
+     
+
+    
 }
+
+

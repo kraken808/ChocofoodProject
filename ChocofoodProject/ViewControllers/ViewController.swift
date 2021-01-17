@@ -9,19 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
+
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
     private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
     static let shared = NetworkManager(baseUrl: "https://api.jsonbin.io")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-      
-     collectionView.register(UINib(nibName: "MenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MenuCell")
+        title = "salam"
         
-      
+  collectionView.delegate = self
+       collectionView.dataSource = self
+     collectionView.register(UINib(nibName: "MenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MenuCell")
+      collectionView.register(UINib(nibName: "SmallMenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SmallMenuCell")
+        
+     
         ViewController.shared.request(path:"/b/5ff1946009f7c73f1b6d134f", method: .get, params: ["id": 12, "test": "salam"]) { (result: Result<[Cafe],Error>) in
                switch result{
                      case .success(let result):
@@ -52,51 +59,43 @@ extension ViewController: UICollectionViewDataSource{
         return 1
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if  (indexPath.row % 4 == 2 || indexPath.row % 4 == 3){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SmallMenuCell", for: indexPath) as! SmallMenuCell
+                   cell.bindData(data: cafes[indexPath.row])
+                   return cell
+        }else{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! MenuCell
         cell.bindData(data: cafes[indexPath.row])
         return cell
+        }
+        return UICollectionViewCell()
     }
     
     
 }
 
-//extension ViewController: UICollectionViewDelegate{
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        print(#function)
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        return 203
-//    }
-//   
-//}
+extension ViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-//extension ViewController: UICollectionViewDelegateFlowLayout{
-//
-//// func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////
-////      let width = (collectionView.frame.size.width-30)
-////    print("heaight: \(width)")
-////    print("width: \(width)")
-////       return CGSize(width: width, height: width)
-////   }
-//
-//   //---------------------------------------------------------------------------------------------------------------------------------------------
-//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//
-//       return 1
-//   }
-//
-//   //---------------------------------------------------------------------------------------------------------------------------------------------
-//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//
-//       return 1
-//   }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//
-//        return UIEdgeInsets(top: 40, left: 15, bottom: 26, right: 16)
-//    }
-//}
+        print(#function)
+    }
+   
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout{
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = collectionView.frame.size.width-31
+        let height = collectionView.frame.size.height/2.482
+        if (indexPath.row % 4 == 2 || indexPath.row % 4 == 3){
+            return CGSize(width: (width-33)/2, height: (height+19)/2)
+        }else{
+            return CGSize(width: width, height: height)
+        }
+
+        return CGSize.zero
+    }
+}
