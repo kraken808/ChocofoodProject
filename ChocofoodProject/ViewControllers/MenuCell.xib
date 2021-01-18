@@ -40,6 +40,10 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хачапури Хинкалич" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh7-71-bFu">
                         <rect key="frame" x="39" y="6" width="204" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="204" id="W3D-IO-0Ow"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="ub1-0p-rox"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29411764705882354" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" red="0.29019607843137252" green="0.29411764705882354" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,7 +159,7 @@
                 <constraints>
                     <constraint firstItem="3tt-eN-3uQ" firstAttribute="leading" secondItem="eRr-0q-DFb" secondAttribute="leading" constant="8" id="0lC-be-xGG"/>
                     <constraint firstItem="f0P-6T-ha0" firstAttribute="top" secondItem="3tt-eN-3uQ" secondAttribute="bottom" constant="9" id="3r1-pm-xF9"/>
-                    <constraint firstItem="14o-n2-2qV" firstAttribute="leading" secondItem="tuX-k6-Z2F" secondAttribute="trailing" constant="12" id="5Pg-QH-njz"/>
+                    <constraint firstItem="14o-n2-2qV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tuX-k6-Z2F" secondAttribute="trailing" constant="12" id="5Pg-QH-njz"/>
                     <constraint firstItem="14o-n2-2qV" firstAttribute="top" secondItem="3tt-eN-3uQ" secondAttribute="bottom" constant="6" id="7gd-vc-YHE"/>
                     <constraint firstItem="8QC-lC-cIL" firstAttribute="top" secondItem="3tt-eN-3uQ" secondAttribute="bottom" constant="9" id="AA2-Qn-Xcn"/>
                     <constraint firstAttribute="trailing" secondItem="3tt-eN-3uQ" secondAttribute="trailing" constant="8" id="C0C-3v-IB6"/>
@@ -172,7 +176,7 @@
                     <constraint firstItem="3tt-eN-3uQ" firstAttribute="centerY" secondItem="eRr-0q-DFb" secondAttribute="centerY" id="Z6S-Fz-gIr"/>
                     <constraint firstItem="tuX-k6-Z2F" firstAttribute="top" secondItem="3tt-eN-3uQ" secondAttribute="bottom" constant="6" id="ZxH-oN-Oow"/>
                     <constraint firstItem="wo2-8a-uPI" firstAttribute="top" secondItem="3tt-eN-3uQ" secondAttribute="bottom" constant="9.5800000000000001" id="a7Y-QK-ObT"/>
-                    <constraint firstItem="3tt-eN-3uQ" firstAttribute="top" secondItem="Rh7-71-bFu" secondAttribute="bottom" constant="5" id="aj3-T0-bIl"/>
+                    <constraint firstItem="3tt-eN-3uQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rh7-71-bFu" secondAttribute="bottom" constant="5" id="aj3-T0-bIl"/>
                     <constraint firstItem="wo2-8a-uPI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="glh-LI-ezt" secondAttribute="trailing" constant="13" id="hJa-rq-4ZR"/>
                     <constraint firstItem="glh-LI-ezt" firstAttribute="leading" secondItem="f0P-6T-ha0" secondAttribute="trailing" constant="6.75" id="jwP-jQ-HpQ"/>
                     <constraint firstItem="14o-n2-2qV" firstAttribute="leading" secondItem="tuX-k6-Z2F" secondAttribute="trailing" constant="12" id="lfB-rN-ZB3"/>
@@ -214,9 +218,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Vector" width="42" height="50"/>
+        <image name="Vector" width="10.5" height="12.5"/>
         <image name="courier" width="17" height="12"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="tenge" width="55" height="56"/>
+        <image name="tenge" width="14" height="14"/>
     </resources>
 </document>

@@ -34,6 +34,8 @@ class NetworkManager {
         }
         
         let url = URL(baseUrl: baseUrl, path: path, queryItems: queryItems)
+        
+        print("url: \(url)")
         var request = URLRequest(url: url)
         
         request.httpMethod = method.rawValue
@@ -68,9 +70,7 @@ class NetworkManager {
                 
                 do{
                     let result = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("-----------start----\n\n")
-                    print(result)
-                    print("--------------end----\n\n")
+                
                     statusResonse = try JSONDecoder().decode(StatusResponse.self, from: data)
                     
                     completion(.failure(APIError.message(statusResonse.message)))
@@ -78,7 +78,7 @@ class NetworkManager {
                     
                     statusResonse = StatusResponse(message: "Error fetching data!")
                 }
-                print(statusResonse)
+             
                 return
             }
             
@@ -87,7 +87,7 @@ class NetworkManager {
             do {
                 let result = try JSONDecoder().decode(T.self, from: data)
                 //                     let result = try JSONSerialization.jsonObject(with: data, options: [])
-                print(result)
+                
                 completion(.success(result))
             } catch {
                 print("Error: Trying to convert JSON data to string")

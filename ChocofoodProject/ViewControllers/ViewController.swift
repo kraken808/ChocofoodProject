@@ -7,46 +7,78 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
-
+    var locationManager: CLLocationManager?
+       var latitude: Double = 0.0
+       var longitude: Double = 0.0
     @IBOutlet weak var collectionView: UICollectionView!
     
     
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
     private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
-    static let shared = NetworkManager(baseUrl: "https://api.jsonbin.io")
+    static let shared = NetworkManager(baseUrl: "https://hermes.chocofood.kz")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "salam"
         
+        setupLocationManager()
+        ViewController.shared.request(path:"/api/delivery_areas/restaurants/", method: .get, params: ["latitude": 43.236511,"limit":4, "longitude":76.91573]) { (result: Result<[Cafe],Error>) in
+                          switch result{
+                                case .success(let result):
+                                 
+                                self.cafes = result
+                                            DispatchQueue.main.async{
+                                                self.collectionView.reloadData()
+                                            }
+                                  print(result)
+                                case .failure(_):
+                                    print("\n \n error hetting data! \n \n")
+
+                                }
+                   }
   collectionView.delegate = self
        collectionView.dataSource = self
      collectionView.register(UINib(nibName: "MenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MenuCell")
       collectionView.register(UINib(nibName: "SmallMenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SmallMenuCell")
-        
-     
-        ViewController.shared.request(path:"/b/5ff1946009f7c73f1b6d134f", method: .get, params: ["id": 12, "test": "salam"]) { (result: Result<[Cafe],Error>) in
-               switch result{
-                     case .success(let result):
-                        print(result)
-                     self.cafes = result
-                                 DispatchQueue.main.async{
-                                     self.collectionView.reloadData()
-                                 }
-                       print(result)
-                     case .failure(_):
-                         print("\n \n error hetting data! \n \n")
-
-                     }
-        }
        
-      
-}
+   }
+    
+    
+   func setupLocationManager(){
+          
+          locationManager = CLLocationManager()
+          self.locationManager?.delegate = self
+          self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+          self.locationManager?.requestWhenInUseAuthorization()
+          self.locationManager?.distanceFilter = 100.0
+      }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+       
+           //stop location manager
+           self.locationManager?.stopUpdatingLocation()
+           
+           if let currentLocation: CLLocation = locations.last {
+               
+               //print(currentLocation)
+               latitude = currentLocation.coordinate.latitude
+               longitude = currentLocation.coordinate.longitude
+           
+              //print(latitude)
+               //print(longitude)
+               
+               getNearCafes()
+           }
+           
+       }
    
+    func getNearCafes(){
+     
+    }
 }
 
 extension ViewController: UICollectionViewDataSource{
@@ -73,7 +105,9 @@ extension ViewController: UICollectionViewDataSource{
         return UICollectionViewCell()
     }
     
-    
+    func fetch(paging: Bool = false){
+        
+    }
 }
 
 extension ViewController: UICollectionViewDelegate{
@@ -97,5 +131,56 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
         }
 
         return CGSize.zero
+    }
+  
+
+}
+
+extension ViewController: UIScrollViewDelegate{
+      func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         let position = scrollView.contentOffset.y
+         
+         if position > (collectionView.contentSize.height - 100 - scrollView.frame.size.height) {
+             
+          
+             
+             
+             
+             // fetch more data
+          ViewController.shared.request(path:"/api/delivery_areas/restaurants/", method: .get, params: ["latitude": 43.236511,"limit":8, "longitude":76.91573]) { (result: Result<[Cafe],Error>) in
+                                 switch result{
+                                       case .success(let result):
+                                        
+                                       self.cafes = result
+                                                   DispatchQueue.main.async{
+                                                       self.collectionView.reloadData()
+                                                   }
+                                         print(result)
+                                       case .failure(_):
+                                           print("\n \n error hetting data! \n \n")
+
+                                       }
+                          }
+             
+         }
+     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        collectionView.frame = view.bounds
+       
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        targetContentOffset.pointee = scrollView.contentOffset
+        var indexes = self.collectionView.indexPathsForVisibleItems
+        indexes.sort()
+        var index = indexes.first!
+        let cell = self.collectionView.cellForItem(at: index)!
+        let position = self.collectionView.contentOffset.x - cell.frame.origin.x
+        if position > cell.frame.size.width/2{
+           index.row = index.row+1
+        }
+        self.collectionView.scrollToItem(at: index, at: .left, animated: true )
     }
 }

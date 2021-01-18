@@ -64,7 +64,7 @@
                         <rect key="frame" x="57" y="2" width="68" height="19"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courier" translatesAutoresizingMaskIntoConstraints="NO" id="NkT-JB-lXN">
-                                <rect key="frame" x="6" y="3.5" width="14" height="11"/>
+                                <rect key="frame" x="6" y="3.5" width="14.5" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="14.289999999999999" id="6Wg-Gq-5zI"/>
                                     <constraint firstAttribute="height" constant="11.050000000000001" id="OVX-A5-i0I"/>
@@ -79,14 +79,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="68.109999999999999" id="Awo-fD-LJ9"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="Awo-fD-LJ9"/>
                             <constraint firstItem="Xyd-ci-H7q" firstAttribute="leading" secondItem="NkT-JB-lXN" secondAttribute="trailing" constant="5.8200000000000003" id="DQs-0D-bAc"/>
                             <constraint firstAttribute="bottom" secondItem="Xyd-ci-H7q" secondAttribute="bottom" constant="4" id="Pqr-wb-LcA"/>
                             <constraint firstItem="NkT-JB-lXN" firstAttribute="leading" secondItem="Dqj-Nk-gnq" secondAttribute="leading" constant="5.8899999999999997" id="Vhr-GN-Io8"/>
                             <constraint firstAttribute="trailing" secondItem="Xyd-ci-H7q" secondAttribute="trailing" constant="5.1100000000000003" id="ZhY-04-Cmh"/>
                             <constraint firstAttribute="bottom" secondItem="NkT-JB-lXN" secondAttribute="bottom" constant="4.4500000000000002" id="d4x-Wa-mWM"/>
                             <constraint firstItem="NkT-JB-lXN" firstAttribute="top" secondItem="Dqj-Nk-gnq" secondAttribute="top" constant="3.5" id="eD6-3e-Eym"/>
-                            <constraint firstAttribute="height" constant="19" id="kZu-Bg-Tbn"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="kZu-Bg-Tbn"/>
                             <constraint firstItem="Xyd-ci-H7q" firstAttribute="top" secondItem="Dqj-Nk-gnq" secondAttribute="top" constant="5" id="lGq-lQ-JZc"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -95,42 +95,43 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-DC-h3b">
-                        <rect key="frame" x="5.5" y="91.5" width="10" height="11.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Vector" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-DC-h3b">
+                        <rect key="frame" x="5.5" y="90.5" width="10" height="12.5"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="9.9399999999999995" id="cpY-l3-vAI"/>
-                            <constraint firstAttribute="height" constant="11.380000000000001" id="fpz-wu-BMT"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="9" id="cpY-l3-vAI"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="fpz-wu-BMT"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55 мин." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANj-ji-5hy">
-                        <rect key="frame" x="21" y="91" width="36" height="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="55 мин." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANj-ji-5hy">
+                        <rect key="frame" x="21" y="90" width="36" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="13" id="jQ4-lU-kdx"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="OLr-o9-M0A"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="jQ4-lU-kdx"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tenge" translatesAutoresizingMaskIntoConstraints="NO" id="jgU-VZ-8Fm">
-                        <rect key="frame" x="67" y="92" width="11.5" height="10.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="tenge" translatesAutoresizingMaskIntoConstraints="NO" id="jgU-VZ-8Fm">
+                        <rect key="frame" x="67" y="88.5" width="11.5" height="14"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="11.43" id="XOZ-OI-Yvg"/>
-                            <constraint firstAttribute="height" constant="10.27" id="YY4-l7-4tb"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="11" id="XOZ-OI-Yvg"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="YY4-l7-4tb"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-UE-ltm">
-                        <rect key="frame" x="85" y="93" width="32" height="11"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-UE-ltm">
+                        <rect key="frame" x="86" y="93" width="31" height="11"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="11" id="Bdn-yL-yo1"/>
-                            <constraint firstAttribute="width" constant="31.850000000000001" id="Vwr-0Q-wSF"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="Bdn-yL-yo1"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="31" id="Vwr-0Q-wSF"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="7"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хачапури Хинкалич" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7d3-3K-BAp">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хачапури Хинкалич" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7d3-3K-BAp">
                         <rect key="frame" x="20" y="37" width="91" height="16.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="91.060000000000002" id="5R6-Fj-lPU"/>
@@ -156,12 +157,12 @@
                     <constraint firstItem="cxI-DC-h3b" firstAttribute="leading" secondItem="AKw-rc-niM" secondAttribute="leading" constant="5.6600000000000001" id="XHZ-ig-Xe5"/>
                     <constraint firstAttribute="trailing" secondItem="PzC-VI-3NU" secondAttribute="trailing" id="YKq-gA-LNv"/>
                     <constraint firstAttribute="trailing" secondItem="Dqj-Nk-gnq" secondAttribute="trailing" constant="3.8900000000000001" id="ayB-n2-s90"/>
-                    <constraint firstItem="7d3-3K-BAp" firstAttribute="top" secondItem="42i-8E-WnY" secondAttribute="bottom" constant="19" id="fhU-Gf-fxB"/>
+                    <constraint firstItem="7d3-3K-BAp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="42i-8E-WnY" secondAttribute="bottom" constant="19" id="fhU-Gf-fxB"/>
                     <constraint firstAttribute="bottom" secondItem="ANj-ji-5hy" secondAttribute="bottom" constant="7" id="gCd-SR-RhX"/>
-                    <constraint firstItem="jgU-VZ-8Fm" firstAttribute="leading" secondItem="ANj-ji-5hy" secondAttribute="trailing" constant="10" id="gj6-rA-2U3"/>
+                    <constraint firstItem="jgU-VZ-8Fm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ANj-ji-5hy" secondAttribute="trailing" constant="10" id="gj6-rA-2U3"/>
                     <constraint firstAttribute="bottom" secondItem="cxI-DC-h3b" secondAttribute="bottom" constant="8.0800000000000001" id="kBw-9A-Smr"/>
                     <constraint firstItem="Dqj-Nk-gnq" firstAttribute="top" secondItem="AKw-rc-niM" secondAttribute="top" constant="2" id="nia-fO-jO7"/>
-                    <constraint firstItem="42i-8E-WnY" firstAttribute="top" secondItem="AKw-rc-niM" secondAttribute="top" constant="4" id="qCb-Xl-9KA"/>
+                    <constraint firstItem="42i-8E-WnY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AKw-rc-niM" secondAttribute="top" constant="4" id="qCb-Xl-9KA"/>
                     <constraint firstItem="42i-8E-WnY" firstAttribute="leading" secondItem="AKw-rc-niM" secondAttribute="leading" constant="8" id="uBA-vB-Ci1"/>
                 </constraints>
             </collectionViewCellContentView>
@@ -177,9 +178,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Vector" width="42" height="50"/>
+        <image name="Vector" width="10.5" height="12.5"/>
         <image name="courier" width="17" height="12"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="tenge" width="55" height="56"/>
+        <image name="tenge" width="14" height="14"/>
     </resources>
 </document>

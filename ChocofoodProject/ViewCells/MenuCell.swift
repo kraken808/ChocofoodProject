@@ -30,7 +30,8 @@ class MenuCell: UICollectionViewCell {
         if(data.delivery_tariff.conditions[0].order_min_cost/1000 >= 1){
             var thousand = data.delivery_tariff.conditions[0].order_min_cost / 1000
             var hundred = data.delivery_tariff.conditions[0].order_min_cost % 1000
-            cashTenge.text = "\(thousand) \(hundred) тг"
+            if hundred == 0 {cashTenge.text = "\(thousand) 000 тг" }
+            else {cashTenge.text = "\(thousand) \(hundred) тг"}
         }else{
             cashTenge.text = "\(data.delivery_tariff.conditions[0].order_min_cost) тг"
         }
