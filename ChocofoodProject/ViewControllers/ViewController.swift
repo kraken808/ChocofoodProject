@@ -17,40 +17,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var activityIndicator=UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
     private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
     static let shared = NetworkManager(baseUrl: "https://hermes.chocofood.kz")
     var offset = 0
     let limit = 4
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLocationManager()
-        ViewController.shared.request(path:"/api/delivery_areas/restaurants/", method: .get, params: ["latitude": 43.236511,"limit":4, "longitude":76.91573,"offset":0]) { (result: Result<[Cafe],Error>) in
-                          switch result{
-                                case .success(let result):
-                                 
-                                self.cafes = result
-                                self.offset += self.limit
-                                            DispatchQueue.main.async{
-                                                self.collectionView.reloadData()
-                                            }
-                                  print(result)
-                                case .failure(_):
-                                    print("\n \n error hetting data! \n \n")
-
-                                }
-                   }
-       collectionView.delegate = self
-       collectionView.dataSource = self
-       collectionView.register(UINib(nibName: "MenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MenuCell")
-       collectionView.register(UINib(nibName: "SmallMenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SmallMenuCell")
+        setupCollectionView()
        
    }
     
-    
+    func setupCollectionView(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "MenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MenuCell")
+        collectionView.register(UINib(nibName: "SmallMenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SmallMenuCell")
+    }
    func setupLocationManager(){
           
           locationManager = CLLocationManager()
@@ -60,7 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
           self.locationManager?.distanceFilter = 100.0
       }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
            //stop location manager
            self.locationManager?.stopUpdatingLocation()
@@ -138,11 +125,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 }
 
 extension ViewController: UIScrollViewDelegate{
+    
       func scrollViewDidScroll(_ scrollView: UIScrollView) {
          let position = scrollView.contentOffset.y
          
          if position > (collectionView.contentSize.height - 100 - scrollView.frame.size.height) {
              
+            
+            
              // fetch more data
             ViewController.shared.request(path:"/api/delivery_areas/restaurants/", method: .get, params: ["latitude": 43.236511,"limit":4, "longitude":76.91573, "offset":offset]) { (result: Result<[Cafe],Error>) in
                                  switch result{

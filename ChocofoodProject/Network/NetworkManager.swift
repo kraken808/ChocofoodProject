@@ -18,8 +18,9 @@ class NetworkManager {
     init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
-    
+  
     func request<T: Codable>(path: String, method: RequestType, params: JSON = [:], completion: @escaping (Result<T,Error>) -> Void) {
+      
         var queryItems = [] as [URLQueryItem]
         
         switch method{
@@ -93,6 +94,7 @@ class NetworkManager {
                 print("Error: Trying to convert JSON data to string")
                 return
             }
+        
         }.resume()
         
     }
