@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9AA641112F38E72DB30FEE83 /* Pods_ChocofoodProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773760EF97F82EAA8076824A /* Pods_ChocofoodProject.framework */; };
+		FB506B4B25B61AB400C60760 /* Formatter + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB506B4A25B61AB400C60760 /* Formatter + extension.swift */; };
+		FB506B4D25B61AD100C60760 /* Numeric + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB506B4C25B61AD100C60760 /* Numeric + extension.swift */; };
+		FB506B4F25B6297400C60760 /* StackView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB506B4E25B6297400C60760 /* StackView + extension.swift */; };
 		FB5DDED425B37CD100E6F4B1 /* SmallMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB5DDED325B37CD100E6F4B1 /* SmallMenuCell.xib */; };
 		FB5DDEDC25B3A83500E6F4B1 /* SmallMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5DDEDB25B3A83500E6F4B1 /* SmallMenuCell.swift */; };
 		FBC753F625A7114A005982B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC753F525A7114A005982B5 /* AppDelegate.swift */; };
@@ -27,7 +30,6 @@
 		FBC7542F25AC984F005982B5 /* MPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7542E25AC984F005982B5 /* MPost.swift */; };
 		FBC7543925AEDC2E005982B5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC7543825AEDC2E005982B5 /* MenuCell.xib */; };
 		FBC7543B25AF0C60005982B5 /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7543A25AF0C60005982B5 /* UIView + extension.swift */; };
-		FBC7544125B04568005982B5 /* ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7544025B04568005982B5 /* ViewCell.swift */; };
 		FBC7544725B1ECA7005982B5 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC7544625B1ECA6005982B5 /* ViewController.xib */; };
 		FBC7544925B245D3005982B5 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC7544825B245D3005982B5 /* UIImage + extension.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,9 @@
 		6B1F54047454340B0DE15250 /* Pods-ChocofoodProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChocofoodProject.debug.xcconfig"; path = "Target Support Files/Pods-ChocofoodProject/Pods-ChocofoodProject.debug.xcconfig"; sourceTree = "<group>"; };
 		773760EF97F82EAA8076824A /* Pods_ChocofoodProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChocofoodProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64276DCDE59AFB04CFBD1B3 /* Pods-ChocofoodProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChocofoodProject.release.xcconfig"; path = "Target Support Files/Pods-ChocofoodProject/Pods-ChocofoodProject.release.xcconfig"; sourceTree = "<group>"; };
+		FB506B4A25B61AB400C60760 /* Formatter + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter + extension.swift"; sourceTree = "<group>"; };
+		FB506B4C25B61AD100C60760 /* Numeric + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric + extension.swift"; sourceTree = "<group>"; };
+		FB506B4E25B6297400C60760 /* StackView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + extension.swift"; sourceTree = "<group>"; };
 		FB5DDED225B339D000E6F4B1 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
 		FB5DDED325B37CD100E6F4B1 /* SmallMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallMenuCell.xib; sourceTree = "<group>"; };
 		FB5DDEDB25B3A83500E6F4B1 /* SmallMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallMenuCell.swift; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		FBC7542E25AC984F005982B5 /* MPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPost.swift; sourceTree = "<group>"; };
 		FBC7543825AEDC2E005982B5 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		FBC7543A25AF0C60005982B5 /* UIView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
-		FBC7544025B04568005982B5 /* ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCell.swift; sourceTree = "<group>"; };
 		FBC7544625B1ECA6005982B5 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		FBC7544825B245D3005982B5 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				FBC7540F25A71819005982B5 /* MenuCell.swift */,
-				FBC7544025B04568005982B5 /* ViewCell.swift */,
 				FB5DDEDB25B3A83500E6F4B1 /* SmallMenuCell.swift */,
 			);
 			path = ViewCells;
@@ -174,6 +177,9 @@
 				FBC7542425AB7D6A005982B5 /* URLexstension.swift */,
 				FBC7543A25AF0C60005982B5 /* UIView + extension.swift */,
 				FBC7544825B245D3005982B5 /* UIImage + extension.swift */,
+				FB506B4A25B61AB400C60760 /* Formatter + extension.swift */,
+				FB506B4C25B61AD100C60760 /* Numeric + extension.swift */,
+				FB506B4E25B6297400C60760 /* StackView + extension.swift */,
 			);
 			path = Extesions;
 			sourceTree = "<group>";
@@ -309,14 +315,16 @@
 			files = (
 				FBC753FA25A7114A005982B5 /* ViewController.swift in Sources */,
 				FBC753F625A7114A005982B5 /* AppDelegate.swift in Sources */,
+				FB506B4B25B61AB400C60760 /* Formatter + extension.swift in Sources */,
 				FB5DDEDC25B3A83500E6F4B1 /* SmallMenuCell.swift in Sources */,
 				FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */,
 				FBC7542125A9D9C1005982B5 /* MMessage.swift in Sources */,
-				FBC7544125B04568005982B5 /* ViewCell.swift in Sources */,
 				FBC7544925B245D3005982B5 /* UIImage + extension.swift in Sources */,
+				FB506B4F25B6297400C60760 /* StackView + extension.swift in Sources */,
 				FBC7542525AB7D6A005982B5 /* URLexstension.swift in Sources */,
 				FBC7542925AB8125005982B5 /* RequestType.swift in Sources */,
 				FBC7540B25A71165005982B5 /* Cafe.swift in Sources */,
+				FB506B4D25B61AD100C60760 /* Numeric + extension.swift in Sources */,
 				FBC7542725AB7EDF005982B5 /* APIError.swift in Sources */,
 				FBC7543B25AF0C60005982B5 /* UIView + extension.swift in Sources */,
 				FBC753F825A7114A005982B5 /* SceneDelegate.swift in Sources */,
