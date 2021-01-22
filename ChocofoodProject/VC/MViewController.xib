@@ -39,6 +39,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="JAT-hg-g9E" firstAttribute="top" secondItem="AGT-Ek-Zud" secondAttribute="top" id="4hb-lI-vpi"/>
+                        <constraint firstItem="86p-mx-89e" firstAttribute="top" secondItem="AGT-Ek-Zud" secondAttribute="top" constant="131" id="IzE-Rb-xAL"/>
                         <constraint firstAttribute="trailing" secondItem="86p-mx-89e" secondAttribute="trailing" id="NwR-Bs-ZKJ"/>
                         <constraint firstAttribute="bottom" secondItem="86p-mx-89e" secondAttribute="bottom" id="Td6-Q7-KGp"/>
                         <constraint firstItem="JAT-hg-g9E" firstAttribute="leading" secondItem="AGT-Ek-Zud" secondAttribute="leading" id="cm9-Ep-VqU"/>
@@ -52,6 +53,7 @@
             <constraints>
                 <constraint firstItem="JAT-hg-g9E" firstAttribute="width" secondItem="ZVY-ET-UOJ" secondAttribute="width" id="7KH-5X-PVE"/>
                 <constraint firstItem="86p-mx-89e" firstAttribute="width" secondItem="ZVY-ET-UOJ" secondAttribute="width" id="DcE-4c-1q0"/>
+                <constraint firstItem="JAT-hg-g9E" firstAttribute="top" secondItem="cvb-dd-fHQ" secondAttribute="top" id="ErV-Nd-p43"/>
                 <constraint firstItem="AGT-Ek-Zud" firstAttribute="top" secondItem="cvb-dd-fHQ" secondAttribute="top" id="FSS-xu-9Tl"/>
                 <constraint firstItem="cvb-dd-fHQ" firstAttribute="bottom" secondItem="AGT-Ek-Zud" secondAttribute="bottom" id="QK1-Ru-S2E"/>
                 <constraint firstItem="AGT-Ek-Zud" firstAttribute="trailing" secondItem="cvb-dd-fHQ" secondAttribute="trailing" id="Trl-OM-KJM"/>
