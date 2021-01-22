@@ -120,8 +120,8 @@ extension ViewController: UICollectionViewDelegate{
        
 //        collectionView.deselectItem(at: indexPath, animated: true)
         
-//         let menuViewController = MViewController(pk: cafes[indexPath.row].restaurant.pk, imageUrl: cafes[indexPath.row].restaurant.image)
-        navigationController?.pushViewController(MViewController(), animated: true)
+         let menuViewController = MViewController(pk: cafes[indexPath.row].restaurant.pk, imageUrl: cafes[indexPath.row].restaurant.image)
+        navigationController?.pushViewController(menuViewController, animated: true)
         
     }
    

@@ -192,10 +192,6 @@
                 </userDefinedRuntimeAttributes>
             </collectionViewCellContentView>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="eRr-0q-DFb" firstAttribute="leading" secondItem="FWL-pi-kk9" secondAttribute="leading" id="D41-6p-Z0e"/>
-                <constraint firstItem="eRr-0q-DFb" firstAttribute="top" secondItem="FWL-pi-kk9" secondAttribute="top" id="XOz-QE-Q1p"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="FWL-pi-kk9"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
