@@ -11,13 +11,12 @@ import Foundation
 
 typealias JSON = [String: Any]
 
-class NetworkManager {
+class NetworkManager:NSObject, URLSessionTaskDelegate, URLSessionDataDelegate {
+
+    static let shared = NetworkManager()
+    private var baseUrl  = "https://hermes.chocofood.kz"
     
-    private var baseUrl: String
     
-    init(baseUrl: String) {
-        self.baseUrl = baseUrl
-    }
   
     func request<T: Codable>(path: String, method: RequestType, params: JSON = [:], completion: @escaping (Result<T,Error>) -> Void) {
       
@@ -49,9 +48,11 @@ class NetworkManager {
             break
         }
         
-        let session = URLSession(configuration: .default)
-        
-        session.dataTask(with: request) { data, response, error in
+        let session = URLSession(configuration: .default,delegate: nil,delegateQueue: nil)
+      
+            
+
+         session.dataTask(with: request) { data, response, error in
             guard error == nil else {
                 completion(.failure(APIError.connectionEror))
                 print(error!)
@@ -95,8 +96,10 @@ class NetworkManager {
                 return
             }
         
-        }.resume()
-        
+            }.resume()
+           session.finishTasksAndInvalidate()
     }
+    
+
     
 }

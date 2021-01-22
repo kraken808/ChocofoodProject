@@ -16,20 +16,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
        var longitude: Double = 0.0
     var activityIndicator=UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var collectionLayout = UICollectionViewFlowLayout()
     var cafes = [Cafe]()
     var reuseIdentifier = "cellView"
-    private let cafeUrl = "https://api.jsonbin.io/b/5ff1946009f7c73f1b6d134f"
-    static let shared = NetworkManager(baseUrl: "https://hermes.chocofood.kz")
+
+    
     var offset = 0
     let limit = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isHidden = true
         setupLocationManager()
         setupCollectionView()
-       
+        loadMoreData()
    }
     
     func setupCollectionView(){
@@ -39,7 +39,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         collectionView.register(UINib(nibName: "SmallMenuCell", bundle: Bundle.main), forCellWithReuseIdentifier: "SmallMenuCell")
     }
    func setupLocationManager(){
-          
           locationManager = CLLocationManager()
           self.locationManager?.delegate = self
           self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -60,15 +59,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
            
               //print(latitude)
                //print(longitude)
-               
-               getNearCafes()
            }
            
        }
    
-    func getNearCafes(){
-     
-    }
 }
 
 extension ViewController: UICollectionViewDataSource{
@@ -95,13 +89,40 @@ extension ViewController: UICollectionViewDataSource{
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+            if indexPath.row == cafes.count - 1 {  //numberofitem count
+                loadMoreData()
+            }
+    }
+    func loadMoreData(){
+        NetworkManager.shared.request(path:"/api/delivery_areas/restaurants/", method: .get, params: ["latitude": 43.236511,"limit":4, "longitude":76.91573, "offset":offset]) { (result: Result<[Cafe],Error>) in
+                                     switch result{
+                                           case .success(let result):
+                                            
+                                            self.cafes.append(contentsOf: result)
+                                                       DispatchQueue.main.async{
+                                                           self.collectionView.reloadData()
+                                                       }
+                                             print(result)
+                                           case .failure(_):
+                                               print("\n \n error hetting data! \n \n")
+
+                                           }
+                              }
+                offset += limit
+    }
+    
     
 }
 
 extension ViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        print(#function)
+       
+//        collectionView.deselectItem(at: indexPath, animated: true)
+        
+//         let menuViewController = MViewController(pk: cafes[indexPath.row].restaurant.pk, imageUrl: cafes[indexPath.row].restaurant.image)
+        navigationController?.pushViewController(MViewController(), animated: true)
+        
     }
    
 }
@@ -126,37 +147,26 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
 
 extension ViewController: UIScrollViewDelegate{
     
-      func scrollViewDidScroll(_ scrollView: UIScrollView) {
-         let position = scrollView.contentOffset.y
-         
-         if position > (collectionView.contentSize.height - 100 - scrollView.frame.size.height) {
-             
-            
-            
-             // fetch more data
-            ViewController.shared.request(path:"/api/delivery_areas/restaurants/", method: .get, params: ["latitude": 43.236511,"limit":4, "longitude":76.91573, "offset":offset]) { (result: Result<[Cafe],Error>) in
-                                 switch result{
-                                       case .success(let result):
-                                        
-                                        self.cafes.append(contentsOf: result)
-                                                   DispatchQueue.main.async{
-                                                       self.collectionView.reloadData()
-                                                   }
-                                         print(result)
-                                       case .failure(_):
-                                           print("\n \n error hetting data! \n \n")
-
-                                       }
-                          }
-            offset += limit
-             
-         }
-     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        collectionView.frame = view.bounds
-       
-    }
+//      func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//         let position = scrollView.contentOffset.y
+//
+//         if position > (collectionView.contentSize.height - 100 - scrollView.frame.size.height) {
+//
+//
+//
+//             // fetch more data
+//
+//
+//         }
+//     }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//        collectionView.frame = view.bounds
+//
+//    }
+   
+      
+  
     
 }

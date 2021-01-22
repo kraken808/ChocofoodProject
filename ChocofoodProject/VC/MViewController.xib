@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MViewController" customModule="ChocofoodProject" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollView" destination="AGT-Ek-Zud" id="bxD-BN-dSp"/>
+                <outlet property="view" destination="ZVY-ET-UOJ" id="FNw-Ym-ME6"/>
+                <outlet property="viewWithUI" destination="86p-mx-89e" id="XcN-7a-UXN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZVY-ET-UOJ">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGT-Ek-Zud">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-hg-g9E">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                            <color key="backgroundColor" red="0.52156862749999999" green="0.53333333329999999" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="X5o-A1-XdB"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86p-mx-89e">
+                            <rect key="frame" x="0.0" y="131" width="320" height="700"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="700" id="fqD-DD-dv5"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="JAT-hg-g9E" firstAttribute="top" secondItem="AGT-Ek-Zud" secondAttribute="top" id="4hb-lI-vpi"/>
+                        <constraint firstAttribute="trailing" secondItem="86p-mx-89e" secondAttribute="trailing" id="NwR-Bs-ZKJ"/>
+                        <constraint firstAttribute="bottom" secondItem="86p-mx-89e" secondAttribute="bottom" id="Td6-Q7-KGp"/>
+                        <constraint firstItem="JAT-hg-g9E" firstAttribute="leading" secondItem="AGT-Ek-Zud" secondAttribute="leading" id="cm9-Ep-VqU"/>
+                        <constraint firstItem="86p-mx-89e" firstAttribute="top" secondItem="JAT-hg-g9E" secondAttribute="bottom" constant="-19" id="poo-th-69o"/>
+                        <constraint firstAttribute="trailing" secondItem="JAT-hg-g9E" secondAttribute="trailing" id="t75-ED-YkI"/>
+                        <constraint firstItem="86p-mx-89e" firstAttribute="leading" secondItem="AGT-Ek-Zud" secondAttribute="leading" id="wge-ae-hxM"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="JAT-hg-g9E" firstAttribute="width" secondItem="ZVY-ET-UOJ" secondAttribute="width" id="7KH-5X-PVE"/>
+                <constraint firstItem="86p-mx-89e" firstAttribute="width" secondItem="ZVY-ET-UOJ" secondAttribute="width" id="DcE-4c-1q0"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="top" secondItem="cvb-dd-fHQ" secondAttribute="top" id="FSS-xu-9Tl"/>
+                <constraint firstItem="cvb-dd-fHQ" firstAttribute="bottom" secondItem="AGT-Ek-Zud" secondAttribute="bottom" id="QK1-Ru-S2E"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="trailing" secondItem="cvb-dd-fHQ" secondAttribute="trailing" id="Trl-OM-KJM"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="leading" secondItem="cvb-dd-fHQ" secondAttribute="leading" id="fmm-YH-YP8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="cvb-dd-fHQ"/>
+            <point key="canvasLocation" x="90" y="99.295774647887328"/>
+        </view>
+    </objects>
+</document>
