@@ -26,7 +26,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
+       
+       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+       self.navigationController?.navigationBar.shadowImage = UIImage()
+       self.navigationController?.navigationBar.isTranslucent = true
+       self.navigationController?.view.backgroundColor = UIColor.clear
+        title = "salam"
+        
+          
+       
         setupLocationManager()
         setupCollectionView()
         loadMoreData()

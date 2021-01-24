@@ -32,7 +32,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="NCD-9a-DcB" firstAttribute="leading" secondItem="bY2-Q3-6fn" secondAttribute="leading" id="60W-gf-GDT"/>
-                <constraint firstItem="NCD-9a-DcB" firstAttribute="top" secondItem="bY2-Q3-6fn" secondAttribute="top" id="Dcb-AO-3Ot"/>
+                <constraint firstItem="NCD-9a-DcB" firstAttribute="top" secondItem="nTU-st-TFp" secondAttribute="top" id="Dcb-AO-3Ot"/>
                 <constraint firstItem="bY2-Q3-6fn" firstAttribute="bottom" secondItem="NCD-9a-DcB" secondAttribute="bottom" id="OnD-Cd-Qx2"/>
                 <constraint firstItem="bY2-Q3-6fn" firstAttribute="trailing" secondItem="NCD-9a-DcB" secondAttribute="trailing" id="Qcq-2p-2aC"/>
             </constraints>

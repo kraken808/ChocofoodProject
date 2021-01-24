@@ -9,10 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MViewController" customModule="ChocofoodProject" customModuleProvider="target">
             <connections>
-                <outlet property="bottomCollectionView" destination="j41-Vl-QZp" id="BQQ-Sw-Gbj"/>
+                <outlet property="bottomView" destination="j1j-Kz-QSr" id="lcY-LS-e41"/>
+                <outlet property="heightContraint" destination="X5o-A1-XdB" id="BIm-TH-zHD"/>
                 <outlet property="imageView" destination="pwy-F5-8Vy" id="wvo-9y-jZq"/>
                 <outlet property="imageViewContainer" destination="JAT-hg-g9E" id="VTQ-y1-i0r"/>
                 <outlet property="scrollView" destination="AGT-Ek-Zud" id="bxD-BN-dSp"/>
+                <outlet property="tabBarHeightConstraint" destination="VIt-ZL-bp0" id="MzG-Be-gtv"/>
                 <outlet property="tabCollectionView" destination="0iS-pL-L7q" id="wk0-nd-3IH"/>
                 <outlet property="view" destination="ZVY-ET-UOJ" id="FNw-Ym-ME6"/>
                 <outlet property="viewWithUI" destination="86p-mx-89e" id="XcN-7a-UXN"/>
@@ -27,19 +29,28 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-hg-g9E">
-                            <rect key="frame" x="0.0" y="130" width="320" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-F5-8Vy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                 </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ti-TG-etN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.51953125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.52156862749999999" green="0.53333333329999999" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="0Ti-TG-etN" firstAttribute="top" secondItem="JAT-hg-g9E" secondAttribute="top" id="Dod-q3-eDD"/>
                                 <constraint firstAttribute="bottom" secondItem="pwy-F5-8Vy" secondAttribute="bottom" id="Vy4-a5-11m"/>
                                 <constraint firstAttribute="height" constant="150" id="X5o-A1-XdB"/>
+                                <constraint firstAttribute="bottom" secondItem="0Ti-TG-etN" secondAttribute="bottom" id="aqX-pe-od0"/>
                                 <constraint firstItem="pwy-F5-8Vy" firstAttribute="leading" secondItem="JAT-hg-g9E" secondAttribute="leading" id="bP2-o9-Cwp"/>
                                 <constraint firstItem="pwy-F5-8Vy" firstAttribute="top" secondItem="JAT-hg-g9E" secondAttribute="top" id="g3S-ZP-DFK"/>
+                                <constraint firstItem="pwy-F5-8Vy" firstAttribute="centerY" secondItem="JAT-hg-g9E" secondAttribute="centerY" id="kQm-3Y-i3q"/>
                                 <constraint firstAttribute="trailing" secondItem="pwy-F5-8Vy" secondAttribute="trailing" id="m4K-LE-Ho0"/>
+                                <constraint firstItem="0Ti-TG-etN" firstAttribute="leading" secondItem="JAT-hg-g9E" secondAttribute="leading" id="rSO-HZ-ePt"/>
+                                <constraint firstAttribute="trailing" secondItem="0Ti-TG-etN" secondAttribute="trailing" id="zlI-yH-L5e"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86p-mx-89e">
@@ -51,58 +62,52 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="rVQ-yN-wtU"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sL-u9-5mF">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5sL-u9-5mF">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="j41-Vl-QZp">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1j-Kz-QSr">
                                     <rect key="frame" x="0.0" y="164" width="320" height="486"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Ed-Vr-cIk">
-                                        <size key="itemSize" width="128" height="128"/>
-                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </collectionViewFlowLayout>
-                                </collectionView>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="0iS-pL-L7q" firstAttribute="leading" secondItem="86p-mx-89e" secondAttribute="leading" id="8Xe-HP-FiP"/>
-                                <constraint firstItem="j41-Vl-QZp" firstAttribute="leading" secondItem="86p-mx-89e" secondAttribute="leading" id="Hta-0t-zBd"/>
-                                <constraint firstAttribute="bottom" secondItem="j41-Vl-QZp" secondAttribute="bottom" id="P5m-U4-IQL"/>
-                                <constraint firstAttribute="trailing" secondItem="j41-Vl-QZp" secondAttribute="trailing" id="YC2-nw-Zs0"/>
+                                <constraint firstAttribute="trailing" secondItem="j1j-Kz-QSr" secondAttribute="trailing" id="EwO-qj-cwI"/>
+                                <constraint firstAttribute="bottom" secondItem="j1j-Kz-QSr" secondAttribute="bottom" id="HHp-d3-jGa"/>
+                                <constraint firstItem="j1j-Kz-QSr" firstAttribute="top" secondItem="0iS-pL-L7q" secondAttribute="bottom" id="J9C-4d-V8X"/>
                                 <constraint firstAttribute="height" constant="650" id="fqD-DD-dv5"/>
                                 <constraint firstAttribute="trailing" secondItem="0iS-pL-L7q" secondAttribute="trailing" id="i5S-Ky-0d4"/>
                                 <constraint firstItem="0iS-pL-L7q" firstAttribute="top" secondItem="86p-mx-89e" secondAttribute="top" constant="129" id="rHV-4s-dRS"/>
-                                <constraint firstItem="j41-Vl-QZp" firstAttribute="top" secondItem="0iS-pL-L7q" secondAttribute="bottom" id="tN0-Lf-ClB"/>
+                                <constraint firstItem="j1j-Kz-QSr" firstAttribute="leading" secondItem="86p-mx-89e" secondAttribute="leading" id="xaF-L7-avm"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="JAT-hg-g9E" firstAttribute="top" secondItem="AGT-Ek-Zud" secondAttribute="top" id="4hb-lI-vpi"/>
-                        <constraint firstItem="86p-mx-89e" firstAttribute="top" secondItem="AGT-Ek-Zud" secondAttribute="top" constant="131" id="IzE-Rb-xAL"/>
-                        <constraint firstAttribute="trailing" secondItem="86p-mx-89e" secondAttribute="trailing" id="NwR-Bs-ZKJ"/>
+                        <constraint firstAttribute="right" secondItem="86p-mx-89e" secondAttribute="right" id="NwR-Bs-ZKJ"/>
                         <constraint firstAttribute="bottom" secondItem="86p-mx-89e" secondAttribute="bottom" id="Td6-Q7-KGp"/>
+                        <constraint firstItem="0iS-pL-L7q" firstAttribute="top" secondItem="AGT-Ek-Zud" secondAttribute="top" constant="260" id="VIt-ZL-bp0"/>
                         <constraint firstItem="JAT-hg-g9E" firstAttribute="leading" secondItem="AGT-Ek-Zud" secondAttribute="leading" id="cm9-Ep-VqU"/>
+                        <constraint firstAttribute="trailing" secondItem="86p-mx-89e" secondAttribute="trailing" id="dlB-Zq-Zqm"/>
+                        <constraint firstItem="86p-mx-89e" firstAttribute="leading" secondItem="AGT-Ek-Zud" secondAttribute="leading" id="hcf-4M-5Es"/>
                         <constraint firstItem="86p-mx-89e" firstAttribute="top" secondItem="JAT-hg-g9E" secondAttribute="bottom" constant="-19" id="poo-th-69o"/>
                         <constraint firstAttribute="trailing" secondItem="JAT-hg-g9E" secondAttribute="trailing" id="t75-ED-YkI"/>
-                        <constraint firstItem="86p-mx-89e" firstAttribute="leading" secondItem="AGT-Ek-Zud" secondAttribute="leading" id="wge-ae-hxM"/>
+                        <constraint firstItem="86p-mx-89e" firstAttribute="left" secondItem="AGT-Ek-Zud" secondAttribute="left" id="wge-ae-hxM"/>
                     </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="JAT-hg-g9E" firstAttribute="width" secondItem="ZVY-ET-UOJ" secondAttribute="width" id="7KH-5X-PVE"/>
-                <constraint firstItem="86p-mx-89e" firstAttribute="width" secondItem="ZVY-ET-UOJ" secondAttribute="width" id="DcE-4c-1q0"/>
-                <constraint firstItem="JAT-hg-g9E" firstAttribute="top" secondItem="cvb-dd-fHQ" secondAttribute="top" id="ErV-Nd-p43"/>
-                <constraint firstItem="AGT-Ek-Zud" firstAttribute="top" secondItem="cvb-dd-fHQ" secondAttribute="top" id="FSS-xu-9Tl"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="top" secondItem="ZVY-ET-UOJ" secondAttribute="top" id="FSS-xu-9Tl"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="right" secondItem="86p-mx-89e" secondAttribute="right" id="I0J-Xs-sT5"/>
                 <constraint firstItem="cvb-dd-fHQ" firstAttribute="bottom" secondItem="AGT-Ek-Zud" secondAttribute="bottom" id="QK1-Ru-S2E"/>
-                <constraint firstItem="AGT-Ek-Zud" firstAttribute="trailing" secondItem="cvb-dd-fHQ" secondAttribute="trailing" id="Trl-OM-KJM"/>
-                <constraint firstItem="AGT-Ek-Zud" firstAttribute="leading" secondItem="cvb-dd-fHQ" secondAttribute="leading" id="fmm-YH-YP8"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="right" secondItem="ZVY-ET-UOJ" secondAttribute="right" id="Trl-OM-KJM"/>
+                <constraint firstItem="AGT-Ek-Zud" firstAttribute="left" secondItem="ZVY-ET-UOJ" secondAttribute="left" id="fmm-YH-YP8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="cvb-dd-fHQ"/>
             <point key="canvasLocation" x="90" y="99.295774647887328"/>
