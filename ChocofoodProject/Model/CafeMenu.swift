@@ -27,7 +27,7 @@ struct Foods: Codable{
 //    var state: String
     var price: Int
    var logo: String?
-//    var selling_text: String
+    var selling_text: String
 //    var external_service_id: String?
 //   var measure: String?
 //    var cooking_method: String?

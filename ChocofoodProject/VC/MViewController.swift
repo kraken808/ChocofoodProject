@@ -25,6 +25,9 @@ class MViewController: UIViewController{
      fileprivate let HeaderIdentifier = "Header"
     var lastContentOffset: CGFloat = 0
    
+    @IBOutlet weak var deliveryFrom: UILabel!
+    @IBOutlet weak var cafeName: UILabel!
+    @IBOutlet var mainContainer: UIView!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -45,14 +48,15 @@ class MViewController: UIViewController{
     var pageViewController = UIPageViewController()
     var selectedTabView = UIView()
     var pageCollection = PageCollection()
+    var cafename = ""
     
-    
-      init(pk: String, imageUrl: String){
+    init(cafeName: String, pk: String, imageUrl: String){
             path = "/api/extended_restaurants/" + pk
             print(path)
             self.imageUrl = imageUrl
+        self.cafename = cafeName
             super.init(nibName: nil, bundle: nil)
-
+       
         }
     
         required init?(coder: NSCoder) {
@@ -60,12 +64,11 @@ class MViewController: UIViewController{
         }
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         scrollView.delegate = self
-       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
-            self.navigationController?.navigationBar.isTranslucent = true
-            self.navigationController?.view.backgroundColor = UIColor.clear
+//       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//            self.navigationController?.navigationBar.shadowImage = UIImage()
+//            self.navigationController?.navigationBar.isTranslucent = true
+//            self.navigationController?.view.backgroundColor = UIColor.clear
         
         imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
    
@@ -88,8 +91,8 @@ class MViewController: UIViewController{
                                         DispatchQueue.main.async{
                                         self.tabCollectionView.reloadData()
                                             self.setupCollectionView()
-                                                                                    self.setupPagingViewController()
-                                                                                    self.populateBottomView()
+                                            self.setupPagingViewController()
+                                             self.populateBottomView()
                                         }
         
                                         case .failure(_):
@@ -99,9 +102,12 @@ class MViewController: UIViewController{
                 }
             
                viewWithUI.roundCorners(corners: [.topLeft,.topRight], radius: 12)
-
+               bindData()
     }
-    
+    func bindData(){
+        self.cafeName.text = cafename
+        self.deliveryFrom.text = "Доставка от " + cafename + ":"
+    }
     func setupCollectionView() {
          
          let layout = tabCollectionView.collectionViewLayout as? UICollectionViewFlowLayout

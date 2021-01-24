@@ -16,7 +16,8 @@ class MenuSetCell: UICollectionViewCell{
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var textField: UITextField!
+  
+    @IBOutlet weak var infoLabel: UILabel!
     
     @IBOutlet weak var priceLable: UILabel!
     
@@ -32,8 +33,8 @@ class MenuSetCell: UICollectionViewCell{
             imageView.sd_setImage(with: URL(string: url), completed: nil)
         }
         
-        imageView.image = UIImage(named: "tenge")
+       
         priceLable.text = "\(foods.price)"
-        textField.text = "vsem salam"
+        infoLabel.text = foods.selling_text
     }
 }

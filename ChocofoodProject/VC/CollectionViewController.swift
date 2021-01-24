@@ -47,9 +47,9 @@ class CollectionViewController: UIViewController{
         
         let flowLayout = CollectionViewFlowLayout()
                          flowLayout.scrollDirection = .vertical
-                         flowLayout.itemSize = CGSize(width: 300, height: 300)
-                         flowLayout.minimumLineSpacing = 1.0
-                         flowLayout.minimumInteritemSpacing = 5
+        flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 10, right: 8)
+                         
+        flowLayout.itemSize = CGSize(width: collectionView.frame.width - 16, height: collectionView.frame.width - 16)
                          collectionView.collectionViewLayout = flowLayout
         setupTableView()
 
@@ -74,7 +74,7 @@ extension CollectionViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuSetCell", for: indexPath) as! MenuSetCell
                        cell.bindData(foods: foods[indexPath.row] )
-        cell.backgroundColor = .brown
+        
                        return cell
     }
     

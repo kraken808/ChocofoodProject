@@ -26,12 +26,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-       self.navigationController?.navigationBar.shadowImage = UIImage()
-       self.navigationController?.navigationBar.isTranslucent = true
-       self.navigationController?.view.backgroundColor = UIColor.clear
-        title = "salam"
+        navigationController?.navigationBar.isHidden = true
+//       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//       self.navigationController?.navigationBar.shadowImage = UIImage()
+//       self.navigationController?.navigationBar.isTranslucent = true
+//       self.navigationController?.view.backgroundColor = UIColor.clear
+//        title = "salam"
         
           
        
@@ -128,7 +128,7 @@ extension ViewController: UICollectionViewDelegate{
        
 //        collectionView.deselectItem(at: indexPath, animated: true)
         
-         let menuViewController = MViewController(pk: cafes[indexPath.row].restaurant.pk, imageUrl: cafes[indexPath.row].restaurant.image)
+        let menuViewController = MViewController(cafeName: cafes[indexPath.row].restaurant.title,pk: cafes[indexPath.row].restaurant.pk, imageUrl: cafes[indexPath.row].restaurant.image)
         navigationController?.pushViewController(menuViewController, animated: true)
         
     }
