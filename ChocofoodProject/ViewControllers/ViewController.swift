@@ -88,10 +88,13 @@ extension ViewController: UICollectionViewDataSource{
         if  (indexPath.row % 4 == 2 || indexPath.row % 4 == 3){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SmallMenuCell", for: indexPath) as! SmallMenuCell
                    cell.bindData(data: cafes[indexPath.row])
+                   cell.backgroundColor = .white
+            cell.layerSetup()
                    return cell
         }else{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as! MenuCell
         cell.bindData(data: cafes[indexPath.row])
+            cell.layerSetup()
         return cell
         }
         return UICollectionViewCell()

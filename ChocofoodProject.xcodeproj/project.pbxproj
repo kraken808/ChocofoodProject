@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9AA641112F38E72DB30FEE83 /* Pods_ChocofoodProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773760EF97F82EAA8076824A /* Pods_ChocofoodProject.framework */; };
+		FB307E6225BE40CB008C3684 /* LayerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB307E6125BE40CB008C3684 /* LayerSetup.swift */; };
 		FB506B4B25B61AB400C60760 /* Formatter + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB506B4A25B61AB400C60760 /* Formatter + extension.swift */; };
 		FB506B4D25B61AD100C60760 /* Numeric + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB506B4C25B61AD100C60760 /* Numeric + extension.swift */; };
 		FB506B4F25B6297400C60760 /* StackView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB506B4E25B6297400C60760 /* StackView + extension.swift */; };
@@ -58,6 +59,7 @@
 		6B1F54047454340B0DE15250 /* Pods-ChocofoodProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChocofoodProject.debug.xcconfig"; path = "Target Support Files/Pods-ChocofoodProject/Pods-ChocofoodProject.debug.xcconfig"; sourceTree = "<group>"; };
 		773760EF97F82EAA8076824A /* Pods_ChocofoodProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChocofoodProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64276DCDE59AFB04CFBD1B3 /* Pods-ChocofoodProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChocofoodProject.release.xcconfig"; path = "Target Support Files/Pods-ChocofoodProject/Pods-ChocofoodProject.release.xcconfig"; sourceTree = "<group>"; };
+		FB307E6125BE40CB008C3684 /* LayerSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerSetup.swift; sourceTree = "<group>"; };
 		FB506B4A25B61AB400C60760 /* Formatter + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter + extension.swift"; sourceTree = "<group>"; };
 		FB506B4C25B61AD100C60760 /* Numeric + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric + extension.swift"; sourceTree = "<group>"; };
 		FB506B4E25B6297400C60760 /* StackView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + extension.swift"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				FBC753FE25A7114B005982B5 /* Assets.xcassets */,
 				FBC7540025A7114B005982B5 /* LaunchScreen.storyboard */,
 				FBC7540325A7114B005982B5 /* Info.plist */,
+				FB307E6125BE40CB008C3684 /* LayerSetup.swift */,
 			);
 			path = ChocofoodProject;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				FB5DDEDC25B3A83500E6F4B1 /* SmallMenuCell.swift in Sources */,
 				FBC7540E25A711D6005982B5 /* NetworkManager.swift in Sources */,
 				FBC7542125A9D9C1005982B5 /* MMessage.swift in Sources */,
+				FB307E6225BE40CB008C3684 /* LayerSetup.swift in Sources */,
 				FBC7544925B245D3005982B5 /* UIImage + extension.swift in Sources */,
 				FB506B4F25B6297400C60760 /* StackView + extension.swift in Sources */,
 				FBC7542525AB7D6A005982B5 /* URLexstension.swift in Sources */,

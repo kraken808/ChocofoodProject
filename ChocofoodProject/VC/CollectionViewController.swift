@@ -74,7 +74,7 @@ extension CollectionViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuSetCell", for: indexPath) as! MenuSetCell
                        cell.bindData(foods: foods[indexPath.row] )
-        
+        cell.layerSetup(shadowColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.51953125))
                        return cell
     }
     
