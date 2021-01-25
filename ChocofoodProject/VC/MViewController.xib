@@ -31,14 +31,14 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGT-Ek-Zud">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-hg-g9E" userLabel="imageContainer">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-hg-g9E" userLabel="imageContainer">
+                            <rect key="frame" x="0.0" y="131" width="320" height="19"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-F5-8Vy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-F5-8Vy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="19"/>
                                 </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ti-TG-etN">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ti-TG-etN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="19"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.51953125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -57,7 +57,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86p-mx-89e" userLabel="viewContainer">
-                            <rect key="frame" x="0.0" y="131" width="320" height="650"/>
+                            <rect key="frame" x="0.0" y="131" width="320" height="670"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0iS-pL-L7q">
                                     <rect key="frame" x="0.0" y="129" width="320" height="35"/>
@@ -73,7 +73,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1j-Kz-QSr">
-                                    <rect key="frame" x="0.0" y="164" width="320" height="486"/>
+                                    <rect key="frame" x="0.0" y="164" width="320" height="506"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8i-Ac-9kp">
@@ -118,7 +118,7 @@
                                 <constraint firstItem="TvK-VQ-QcM" firstAttribute="top" secondItem="yXx-M2-gcS" secondAttribute="bottom" constant="14" id="L0c-Su-mBF"/>
                                 <constraint firstItem="yXx-M2-gcS" firstAttribute="top" secondItem="d8i-Ac-9kp" secondAttribute="bottom" constant="21" id="UE2-Cx-M63"/>
                                 <constraint firstItem="TvK-VQ-QcM" firstAttribute="leading" secondItem="86p-mx-89e" secondAttribute="leading" constant="8" id="fPf-QM-iZ0"/>
-                                <constraint firstAttribute="height" constant="650" id="fqD-DD-dv5"/>
+                                <constraint firstAttribute="height" priority="700" constant="670" id="fqD-DD-dv5"/>
                                 <constraint firstAttribute="trailing" secondItem="0iS-pL-L7q" secondAttribute="trailing" id="i5S-Ky-0d4"/>
                                 <constraint firstItem="0iS-pL-L7q" firstAttribute="top" secondItem="TvK-VQ-QcM" secondAttribute="bottom" constant="14" id="q2S-n7-gqD"/>
                                 <constraint firstItem="0iS-pL-L7q" firstAttribute="top" secondItem="86p-mx-89e" secondAttribute="top" constant="129" id="rHV-4s-dRS"/>

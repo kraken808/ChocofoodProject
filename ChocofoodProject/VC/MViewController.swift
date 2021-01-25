@@ -10,11 +10,7 @@ import Foundation
 import UIKit
 
 
-var topViewInitialHeight : CGFloat = 233
 
-let topViewFinalHeight : CGFloat = UIApplication.shared.statusBarFrame.size.height + 44 //navigation hieght
-
-let topViewHeightConstraintRange = topViewFinalHeight..<topViewInitialHeight
 
 class MViewController: UIViewController{
     
@@ -69,17 +65,20 @@ class MViewController: UIViewController{
 //            self.navigationController?.navigationBar.shadowImage = UIImage()
 //            self.navigationController?.navigationBar.isTranslucent = true
 //            self.navigationController?.view.backgroundColor = UIColor.clear
-        
-        imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
-   
-//                  navigationController?.navigationBar.isTranslucent = true
+//            navigationController?.navigationBar.isTranslucent = true
                 
 
-                  // Remove 'Back' text and Title from Navigation Bar
+                
                   self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
                   self.title = ""
         
-         NetworkManager.shared.request(path: path, method: .get) { (result: Result<CafeMenu,Error>) in
+         
+               getData()
+               viewWithUI.roundCorners(corners: [.topLeft,.topRight], radius: 12)
+               bindData()
+    }
+    func getData(){
+        NetworkManager.shared.request(path: path, method: .get) { (result: Result<CafeMenu,Error>) in
                      switch result{
                                 case .success(let result):
                                          print(result)
@@ -100,13 +99,12 @@ class MViewController: UIViewController{
         
                         }
                 }
-            
-               viewWithUI.roundCorners(corners: [.topLeft,.topRight], radius: 12)
-               bindData()
     }
+    
     func bindData(){
         self.cafeName.text = cafename
         self.deliveryFrom.text = "Доставка от " + cafename + ":"
+        imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
     }
     func setupCollectionView() {
          
@@ -123,7 +121,7 @@ class MViewController: UIViewController{
     func setupSelectedTabView() {
          
          let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: 10))
-         label.text = "TAB \(1)"
+         
          label.sizeToFit()
          var width = label.intrinsicContentSize.width
          width = width + 40
@@ -145,10 +143,9 @@ class MViewController: UIViewController{
     func populateBottomView() {
      
         for category in foodTypes {
-               print("----\n")
+              
             let tabContentVC = CollectionViewController(foods: category.foods)
-               tabContentVC.innerTableViewScrollDelegate = self
-            
+               
             
             let displayName = category.title
                let page = Page(with: displayName, _vc: tabContentVC)
@@ -166,11 +163,11 @@ class MViewController: UIViewController{
                pageViewController.willMove(toParent: self)
                bottomView.addSubview(pageViewController.view)
                
-               pinPagingViewControllerToBottomView()
+               setConstr()
            
     }
     
-    func pinPagingViewControllerToBottomView() {
+    func setConstr() {
           
           bottomView.translatesAutoresizingMaskIntoConstraints = false
           pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -199,13 +196,6 @@ class MViewController: UIViewController{
                    self.selectedTabView.frame.origin.x = cell.frame.origin.x
                }
            }
-       }
-    
-    func animateHeader() {
-           self.heightContraint.constant = 150
-           UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-               self.view.layoutIfNeeded()
-               }, completion: nil)
        }
     
 }
@@ -315,91 +305,6 @@ extension MViewController: UIPageViewControllerDelegate {
     }
 }
 
-extension MViewController: InnerTableViewScrollDelegate {
-    
-    var currentHeaderHeight: CGFloat {
-        
-        return height
-    }
-    
-    func innerTableViewDidScroll(withDistance scrollDistance: CGFloat) {
-       
-        height -= scrollDistance
-        
-        /* Don't restrict the downward scroll.
- 
-        if headerViewHeightConstraint.constant > topViewInitialHeight {
-
-            headerViewHeightConstraint.constant = topViewInitialHeight
-        }
-         
-        */
-        
-        if height < topViewFinalHeight {
-            
-            height = topViewFinalHeight
-        }
-    }
-    
- 
-    
-
-}
 
 
-extension MViewController:UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
-        if scrollView.contentOffset.y < 0 {
-            self.heightContraint.constant += abs(scrollView.contentOffset.y)
-            incrementColorAlpha(offset: self.heightContraint.constant)
-            incrementArticleAlpha(offset: self.heightContraint.constant)
-        } else if scrollView.contentOffset.y > 0 && self.heightContraint.constant >= 65 {
-            self.heightContraint.constant -= scrollView.contentOffset.y/100
-            decrementColorAlpha(offset: scrollView.contentOffset.y)
-            decrementArticleAlpha(offset: self.heightContraint.constant)
-            
-            if self.heightContraint.constant < 65 {
-                self.heightContraint.constant = 65
-            }
-        }
-    }
-    
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if self.heightContraint.constant > 150 {
-            animateHeader()
-        }
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if self.heightContraint.constant > 150 {
-            animateHeader()
-        }
-    }
-    func decrementColorAlpha(offset: CGFloat) {
-          if self.colorView.alpha <= 1 {
-              let alphaOffset = (offset/500)/85
-              self.colorView.alpha += alphaOffset
-          }
-      }
-      
-      
-      func decrementArticleAlpha(offset: CGFloat) {
-          if self.imageView.alpha >= 0 {
-              let alphaOffset = max((offset - 65)/85.0, 0)
-              self.imageView.alpha = alphaOffset
-          }
-      }
-      func incrementColorAlpha(offset: CGFloat) {
-          if self.colorView.alpha >= 0.6 {
-              let alphaOffset = (offset/200)/85
-              self.colorView.alpha -= alphaOffset
-          }
-      }
-      func incrementArticleAlpha(offset: CGFloat) {
-          if self.imageView.alpha <= 1 {
-              let alphaOffset = max((offset - 65)/85, 0)
-              self.imageView.alpha = alphaOffset
-          }
-      }
-}
+
